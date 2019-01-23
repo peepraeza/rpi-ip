@@ -4,11 +4,12 @@
     <title>raspberry pi's ip</title>
 </head>
 <body>
-<?php 
+<?php
+echo "complete '" .$_POST["ip"]."'"; 
 
-echo $_POST["ip"]; 
-
+$myfile = fopen("ip.txt", "w") or die("Unable to open file!");
+$txt = $_POST["ip"]; 
+fwrite($myfile, $txt);
+fclose($myfile);
 ?>
-
-</body>
 </html>
